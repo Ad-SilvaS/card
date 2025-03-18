@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(49, 49, 48);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: 'Roboto';
+}
+
+.cards-container{
+    height: auto;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.card{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    border-radius: 10px 10px 10px 0;
+    background-image: url(/img/glowing-lines-human-heart-3d-shape-dark-background-generative-ai.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.card::after{
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    bottom: 60px;
+    left: 0;
+    background-color: transparent;
+    box-shadow: -10px 10px 0 rgb(48, 49, 49);
+}
+
+.card::before{
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    bottom: 0px;
+    right: 240px;
+    background-color: transparent;
+    box-shadow: -5px 5px 0 rgb(48, 49, 49);
+}
+
+.cont-info{
+    width: 100%;
+    max-height: 200px;
+    background-color: #eeebeb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 0 10px 10px 10px;
+    position: relative;
+
+    img{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
+
+    .cont-up{
+        position: absolute;
+        background-color: #eeebeb;
+        width: 50%;
+        height: 70px;
+        left: 0;
+        top: -70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0 15px 0 0;
+        border-top: 10px solid rgb(48, 49, 49);
+        border-right: 10px solid rgb(48, 49, 49);
+
+        button{
+            cursor: pointer;
+            padding: 10px 32px;
+            border: none;
+            background-color: #964605;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 8px;
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        button::before{
+            content: '';
+            background: linear-gradient(45deg, #ff0000, #ff7300, #002bff, #ff00c8, #ff0000);
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-size: 600%;
+            z-index: -1;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            filter: blur(8px);
+            animation: glowing 20s linear infinite;
+            transition: opacity .3s ease-in-out;
+            border-radius: 8px;
+            opacity: 1;
+        }
+    }
+
+    .cont-up::after{
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        top: 0;
+        left: 0;
+        background-color: transparent;
+        box-shadow: -10px -10px 0 rgb(48, 49, 49);
+    }
+
+    .cont-up::before{
+        position: absolute;
+        content: '';
+        width: 10px;
+        height: 10px;
+        top: 50px;
+        right: -10px;
+        border-radius: 50%;
+        background-color: rgb(48, 49, 49);
+        box-shadow: -5px 5px 0 #fff;
+    }
+}
+
+@keyframes glowing {
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 400% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
+}
